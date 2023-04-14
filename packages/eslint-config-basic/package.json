@@ -1,0 +1,43 @@
+{
+  "name": "@chansee/eslint-config-basic",
+  "version": "0.0.2",
+  "description": "",
+  "author": {
+    "name": "chansee97",
+    "email": "chen.dev@foxmail.com",
+    "url": "https://github.com/chansee97"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/chansee97/lint-config",
+  "keywords": [
+    "eslint-config"
+  ],
+  "main": "index.js",
+  "files": [
+    "*.js"
+  ],
+  "scripts": {
+    "lint": "eslint . --config=index.js"
+  },
+  "peerDependencies": {
+    "eslint": ">=7.4.0"
+  },
+  "dependencies": {
+    "eslint-plugin-eslint-comments": "^3.2.0",
+    "eslint-plugin-html": "^7.1.0",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-jsonc": "^2.7.0",
+    "eslint-plugin-markdown": "^3.0.0",
+    "eslint-plugin-n": "^15.7.0",
+    "eslint-plugin-no-only-tests": "^3.1.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "eslint-plugin-unicorn": "^46.0.0",
+    "eslint-plugin-unused-imports": "^2.0.0",
+    "eslint-plugin-yml": "^1.5.0",
+    "jsonc-eslint-parser": "^2.2.0",
+    "yaml-eslint-parser": "^1.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.37.0"
+  }
+}

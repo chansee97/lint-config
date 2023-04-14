@@ -1,0 +1,31 @@
+{
+  "name": "@chansee/eslint-config-vue",
+  "version": "0.0.2",
+  "description": "",
+  "author": {
+    "name": "chansee97",
+    "email": "chen.dev@foxmail.com",
+    "url": "https://github.com/chansee97"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/chansee97/lint-config",
+  "keywords": [
+    "eslint-config"
+  ],
+  "main": "index.js",
+  "files": [
+    "*.js"
+  ],
+  "peerDependencies": {
+    "eslint": ">=7.4.0"
+  },
+  "dependencies": {
+    "@chansee/eslint-config-basic": "workspace:*",
+    "@chansee/eslint-config-ts": "workspace:*",
+    "eslint-plugin-vue": "^9.10.0",
+    "local-pkg": "^0.4.3"
+  },
+  "devDependencies": {
+    "eslint": "^8.37.0"
+  }
+}
