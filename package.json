@@ -1,6 +1,6 @@
 {
   "name": "@chansee/lint-config-monorepo",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "private": true,
   "packageManager": "pnpm@8.1.1",
   "author": {
