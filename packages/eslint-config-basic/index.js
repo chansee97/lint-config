@@ -1,8 +1,12 @@
 module.exports = {
+  parserOptions: {
+    ecmaVersion: 'latest'
+  },
   env: {
-    es6: true,
     browser: true,
     node: true,
+    commonjs: true,
+    es2022: true
   },
   reportUnusedDisableDirectives: true,
   extends: [
@@ -13,55 +17,22 @@ module.exports = {
     'plugin:yml/standard',
     'plugin:markdown/recommended',
   ],
-  ignorePatterns: [
-    '*.min.*',
-    '*.d.ts',
-    'CHANGELOG.md',
-    'dist',
-    'LICENSE*',
-    'output',
-    'out',
-    'coverage',
-    'public',
-    'temp',
-    'package-lock.json',
-    'pnpm-lock.yaml',
-    'yarn.lock',
-    '__snapshots__',
-    // ignore for in lint-staged
-    '*.css',
-    '*.png',
-    '*.ico',
-    '*.toml',
-    '*.patch',
-    '*.txt',
-    '*.crt',
-    '*.key',
-    'Dockerfile',
-    // force include
-    '!.github',
-    '!.vitepress',
-    '!.vscode',
-  ],
   plugins: [
     'html',
     'unicorn',
-    'unused-imports', 'n', 'promise',
+    'no-only-tests',
+    'unused-imports',
   ],
   settings: {
     'import/resolver': {
       node: { extensions: ['.js', '.mjs'] },
-      settings: {
-        'import/resolver': {
-          alias: {
-            map: [
-              ['~', '.'],
-              ['@', './src'],
-            ],
-            extensions: ['.js', '.jsx', '.mjs', '.cjs', '.ts', '.tsx', '.mts', '.cts'],
-          },
-        },
-      },
+      alias: {
+        map: [
+          ['~', '.'],
+          ['@', './src']
+        ],
+        extensions: ['.js', '.jsx', '.mjs', '.cjs', '.ts', '.tsx', '.mts', '.cts']
+      }
     },
   },
   overrides: [
@@ -85,6 +56,39 @@ module.exports = {
       parser: 'yaml-eslint-parser',
       rules: {
         'spaced-comment': 'off',
+      },
+    },
+    
+    {
+      files: ['*.d.ts'],
+      rules: {
+        'import/no-duplicates': 'off',
+      },
+    },
+    {
+      files: ['*.js', '*.cjs', '*.jsx'],
+      rules: {
+        '@typescript-eslint/no-var-requires': 'off',
+        '@typescript-eslint/no-require-imports': 'off',
+      },
+    },
+    {
+      files: ['*.ts', '*.tsx', '*.mts', '*.cts'],
+      rules: {
+        'no-void': ['error', { allowAsStatement: true }],
+      },
+    },
+    {
+      files: ['scripts/**/*.*', 'cli.*'],
+      rules: {
+        'no-console': 'off',
+      },
+    },
+    {
+      files: ['*.test.ts', '*.test.js', '*.spec.ts', '*.spec.js'],
+      rules: {
+        'no-unused-expressions': 'off',
+        'no-only-tests/no-only-tests': 'error',
       },
     },
     {
@@ -154,32 +158,6 @@ module.exports = {
             ],
           },
         ],
-      },
-    },
-    {
-      files: ['*.d.ts'],
-      rules: {
-        'import/no-duplicates': 'off',
-      },
-    },
-    {
-      files: ['*.js', '*.cjs', '*.jsx'],
-      rules: {
-        '@typescript-eslint/no-var-requires': 'off',
-        '@typescript-eslint/no-require-imports': 'off',
-      },
-    },
-    {
-      files: ['scripts/**/*.*', 'cli.*'],
-      rules: {
-        'no-console': 'off',
-      },
-    },
-    {
-      files: ['*.test.ts', '*.test.js', '*.spec.ts', '*.spec.js'],
-      rules: {
-        'no-unused-expressions': 'off',
-        'no-only-tests/no-only-tests': 'error',
       },
     },
     {
@@ -301,7 +279,7 @@ module.exports = {
     }],
 
     // best-practice
-    'array-callback-return': 'error',
+    // 'array-callback-return': 'error',
     'block-scoped-var': 'error',
     'consistent-return': 'off',
     'complexity': ['off', 11],
@@ -320,7 +298,6 @@ module.exports = {
     'max-statements-per-line': ['error', { max: 1 }],
 
     // node
-    // 'n/prefer-global/process': ['error', 'never'], // Not sure if we need it as we are using `process.env.NODE_ENV` a lot in front-end.
     'n/prefer-global/buffer': ['error', 'never'],
     'n/no-callback-literal': 'off',
 
@@ -370,5 +347,40 @@ module.exports = {
     // yml
     'yml/quotes': ['error', { prefer: 'single', avoidEscape: false }],
     'yml/no-empty-document': 'off',
+
   },
+  ignorePatterns: [
+    '*.min.*',
+    '*.d.ts',
+    '*.log',
+    'CHANGELOG.md',
+    'dist',
+    'LICENSE*',
+    'output',
+    'out',
+    'coverage',
+    'public',
+    'temp',
+    'package-lock.json',
+    'pnpm-lock.yaml',
+    'yarn.lock',
+    '__snapshots__',
+    '.husky',
+    // ignore for in lint-staged
+    '*.css',
+    '*.svg',
+    '*.png',
+    '*.ico',
+    '*.toml',
+    '*.patch',
+    '*.txt',
+    '*.crt',
+    '*.key',
+    '.env.*',
+    'Dockerfile',
+    // force include
+    '!.github',
+    '!.vitepress',
+    '!.vscode',
+  ]
 }

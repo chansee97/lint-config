@@ -1,5 +1,5 @@
 {
-  "name": "@chansee/eslint-config-vue",
+  "name": "@chansee97/eslint-config-vue",
   "version": "0.0.3",
   "description": "",
   "author": {
@@ -20,8 +20,8 @@
     "eslint": ">=7.4.0"
   },
   "dependencies": {
-    "@chansee/eslint-config-basic": "workspace:*",
-    "@chansee/eslint-config-ts": "workspace:*",
+    "@chansee97/eslint-config-basic": "workspace:*",
+    "@chansee97/eslint-config-ts": "workspace:*",
     "eslint-plugin-vue": "^9.10.0",
     "local-pkg": "^0.4.3"
   },

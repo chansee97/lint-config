@@ -1,5 +1,5 @@
 {
-  "name": "@chansee/eslint-config-ts",
+  "name": "@chansee97/eslint-config-ts",
   "version": "0.0.3",
   "description": "",
   "author": {
@@ -21,7 +21,7 @@
     "typescript": ">=3.9"
   },
   "dependencies": {
-    "@chansee/eslint-config-basic": "workspace:*",
+    "@chansee97/eslint-config-basic": "workspace:*",
     "@typescript-eslint/eslint-plugin": "^5.57.1",
     "@typescript-eslint/parser": "^5.57.1"
   },

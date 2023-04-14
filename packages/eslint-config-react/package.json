@@ -1,5 +1,5 @@
 {
-  "name": "@chansee/eslint-config-vue",
+  "name": "@chansee97/eslint-config-vue",
   "version": "0.0.3",
   "description": "",
   "author": {
@@ -23,7 +23,7 @@
     "eslint": ">=7.4.0"
   },
   "dependencies": {
-    "@chansee/eslint-config-ts": "workspace:*",
+    "@chansee97/eslint-config-ts": "workspace:*",
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0"
   },

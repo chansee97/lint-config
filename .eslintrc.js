@@ -1,3 +1,3 @@
 module.exports = {
-  extends: ['./lib/ts'],
+  extends: ['./packages/eslint-config-vue'],
 }
