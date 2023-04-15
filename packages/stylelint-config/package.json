@@ -1,0 +1,37 @@
+{
+  "name": "@chansee97/stylelint-config",
+  "version": "0.0.3",
+  "description": "",
+  "author": {
+    "name": "chansee97",
+    "email": "chen.dev@foxmail.com",
+    "url": "https://github.com/chansee97"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/chansee97/lint-config",
+  "keywords": [
+    "stylelint",
+    "stylelint-config"
+  ],
+  "main": "index.js",
+  "files": [
+    "*.js"
+  ],
+  "scripts": {
+    "stylelint": "npx stylelint *.{css,scss,vue,less,html} --fix"
+  },
+  "peerDependencies": {
+    "stylelint": "*"
+  },
+  "dependencies": {
+    "stylelint-config-html": "^1.1.0",
+    "stylelint-config-recommended-less": "^1.0.4",
+    "stylelint-config-standard-scss": "^8.0.0",
+    "stylelint-config-standard-vue": "^1.0.0",
+    "stylelint-less": "^1.0.6",
+    "stylelint-order": "^6.0.3"
+  },
+  "devDependencies": {
+    "stylelint": "^15.4.0"
+  }
+}
