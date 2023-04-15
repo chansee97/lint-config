@@ -1,0 +1,24 @@
+{
+  "name": "@chansee97/commitlint-config",
+  "version": "0.0.3",
+  "description": "",
+  "author": {
+    "name": "chansee97",
+    "email": "chen.dev@foxmail.com",
+    "url": "https://github.com/chansee97"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/chansee97/lint-config",
+  "keywords": [
+    "commitlint",
+    "commitlint-config"
+  ],
+  "main": "index.js",
+  "files": [
+    "*.js"
+  ],
+  "dependencies": {
+    "@commitlint/config-conventional": "^17.6.1"
+
+  }
+}

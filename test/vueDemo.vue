@@ -1,8 +1,4 @@
 <script>
-const count = 0
-function increment() {
-  this.count++
-}
 export default {
   name: 'Counter',
   data() {

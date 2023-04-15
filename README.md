@@ -1,6 +1,6 @@
 # lint-config
 
-[![npm](https://img.shields.io/npm/v/@chansee97/eslint-config-vue?color=a1b858&label=)](https://npmjs.com/package/@chansee97/eslint-config-vue)
+[![pnpm](https://img.shields.io/pnpm/v/@chansee97/eslint-config-vue?color=a1b858&label=)](https://npmjs.com/package/@chansee97/eslint-config-vue)
 
 This is a repository that focuses on integrating ESLint, Stylelint, and Commitlint to set up code quality and consistency standards in your project. By implementing these tools helps you enforce proper coding styles, detect errors, and ensure clear commits in your GitHub projects.
 
@@ -24,11 +24,20 @@ pnpm add -D eslint @chansee97/xxx-config
 -  @chansee97/stylelint-config
 -  @chansee97/commitlint-config
 
-### Config `.eslintrc`
+### Config Eslint
 
+```bash
+pnpm i -D eslint
+
+echo "{'extends': '@chansee97/eslint-config-xxx'}" > .eslintrc
+```
+add script to `package.json`
 ```json
 {
-  "extends": "@chansee97/xxx-config"
+  "scripts": {
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  }
 }
 ```
 ### TypeScript Aware Rules
@@ -43,32 +52,6 @@ module.exports = {
 }
 ```
 
-### Add script for package.json
-
-```json
-{
-  "scripts": {
-    // eslint script example
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
-    // stylelint script example
-    "stylelint:fix": "npx stylelint *.{css,scss,vue,less,html} --fix"
-  }
-}
-```
-
-### Extending the config
-
-extend your config in `.eslintrc`, `.stylelinrc`, `commitlint.config.js`...
-
-```json
-{
-  "extends": "@chansee97/xxx-config",
-  "rules": {
-    // your rules...
-  }
-}
-```
 ### Lint Staged
 
 If you want to apply lint and auto-fix before every commit, you can add the following to your `package.json`:
@@ -96,11 +79,58 @@ If you want to apply lint and auto-fix before every commit, you can add the foll
 and then
 
 ```bash
-npm i -D lint-staged simple-git-hooks
+pnpm i -D lint-staged simple-git-hooks
+// apply your hooks config
+npx simple-git-hooks
 ```
 
+### Lint CSS,Less,Scss
+```bash
+pnpm i -D stylelint
+
+echo '{"extends": "@chansee97/stylelint-config"}' > .stylelintrc
+```
+add script to `package.json`
+```json
+{
+  "scripts": {
+    "stylelint:fix": "npx stylelint *.{css,scss,vue,less,html} --fix"
+  }
+}
+```
+
+### Lint Commit information
+
+If you want to constrain the Commit information of the project, you need add the following to your `package.json`:
+
+```bash
+pnpm i -D @commitlint/cli
+
+echo '{"extends": "@chansee97/commitlint-config"}' > .commitlintrc
+```
+
+```json
+{
+  "simple-git-hooks": {
+    "commit-msg": "npx --no-install commitlint --edit $HUSKY_GIT_PARAMS "
+  }
+}
+```
+### Extending the config
+
+extend your config in `.eslintrc`, `.stylelintrc`, `.commitlintrc`...
+
+```json
+{
+  "extends": "@chansee97/xxx-config",
+  "rules": {
+    // your rules...
+  }
+}
+```
 ## Thanks
 This repository is modified from [@antfu/eslint-config](https://github.com/antfu/eslint-config)
+
 ## License
 
 [MIT License](./LICENSE.md)

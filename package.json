@@ -16,13 +16,20 @@
     "release": "pnpm update-version && pnpm publish"
   },
   "devDependencies": {
+    "@chansee97/commitlint-config": "workspace:*",
     "@chansee97/eslint-config-vue": "workspace:*",
+    "@commitlint/cli": "^17.6.1",
     "bumpp": "^9.1.0",
     "eslint": "^8.38.0",
+    "lint-staged": "^13.2.1",
     "simple-git-hooks": "^2.8.1",
     "typescript": "^5.0.4"
   },
   "simple-git-hooks": {
-    "pre-commit": "pnpm lint && git add ."
+    "commit-msg": "npx --no-install commitlint --edit $HUSKY_GIT_PARAMS ",
+    "pre-commit": "pnpm lint-staged && git add ."
+  },
+  "lint-staged": {
+    "*.{js,ts,json}": "eslint . --fix"
   }
 }
