@@ -1,12 +1,12 @@
 module.exports = {
   parserOptions: {
-    ecmaVersion: 'latest'
+    ecmaVersion: 'latest',
   },
   env: {
     browser: true,
     node: true,
     commonjs: true,
-    es2022: true
+    es2022: true,
   },
   reportUnusedDisableDirectives: true,
   extends: [
@@ -29,10 +29,10 @@ module.exports = {
       alias: {
         map: [
           ['~', '.'],
-          ['@', './src']
+          ['@', './src'],
         ],
-        extensions: ['.js', '.jsx', '.mjs', '.cjs', '.ts', '.tsx', '.mts', '.cts']
-      }
+        extensions: ['.js', '.jsx', '.mjs', '.cjs', '.ts', '.tsx', '.mts', '.cts'],
+      },
     },
   },
   overrides: [
@@ -58,7 +58,7 @@ module.exports = {
         'spaced-comment': 'off',
       },
     },
-    
+
     {
       files: ['*.d.ts'],
       rules: {
@@ -382,5 +382,5 @@ module.exports = {
     '!.github',
     '!.vitepress',
     '!.vscode',
-  ]
+  ],
 }

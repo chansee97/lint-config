@@ -11,11 +11,18 @@
   "license": "MIT",
   "scripts": {
     "lint": "eslint . --fix",
-    "release": "bumpp -r && pnpm -r publish"
+    "update-version": "bumpp -r",
+    "publish": "pnpm -r publish --access public",
+    "release": "pnpm update-version && pnpm publish"
   },
   "devDependencies": {
+    "@chansee97/eslint-config-vue": "workspace:*",
     "bumpp": "^9.1.0",
     "eslint": "^8.38.0",
+    "simple-git-hooks": "^2.8.1",
     "typescript": "^5.0.4"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm lint && git add ."
   }
 }

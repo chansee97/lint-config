@@ -23,7 +23,7 @@ export default {
     </button>
   </div>
 </template>
- 
+
 <style scoped>
 .container {
   text-align: center;

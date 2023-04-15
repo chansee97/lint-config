@@ -1,4 +1,8 @@
 <script>
+const count = 0
+function increment() {
+  this.count++
+}
 export default {
   name: 'Counter',
   data() {
@@ -9,6 +13,9 @@ export default {
   },
   methods: {
     increment() {
+      this.count++
+    },
+    test() {
       this.count++
     },
   },
@@ -25,15 +32,18 @@ export default {
 </template>
 
 <style scoped>
-.container {
-  text-align: center;
-}
-h1 {
-  font-size: 4rem;
-}
-button {
-  margin-top: 2rem;
-  font-size: 2rem;
-  padding: 1rem;
-}
+  .container {
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 4rem;
+
+  }
+
+  button {
+    margin-top: 2rem;
+    font-size: 2rem;
+    padding: 1rem;
+  }
 </style>
