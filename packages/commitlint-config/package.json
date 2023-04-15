@@ -1,6 +1,6 @@
 {
   "name": "@chansee97/commitlint-config",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "",
   "author": {
     "name": "chansee97",
@@ -19,6 +19,5 @@
   ],
   "dependencies": {
     "@commitlint/config-conventional": "^17.6.1"
-
   }
 }
