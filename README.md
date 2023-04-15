@@ -1,16 +1,16 @@
 # lint-config
 
-[![pnpm](https://img.shields.io/pnpm/v/@chansee97/eslint-config-vue?color=a1b858&label=)](https://npmjs.com/package/@chansee97/eslint-config-vue)
+[![](https://img.shields.io/npm/v/@chansee97/eslint-config-vue?color=a1b858&label=)](https://npmjs.com/package/@chansee97/eslint-config-vue)
 
 This is a repository that focuses on integrating ESLint, Stylelint, and Commitlint to set up code quality and consistency standards in your project. By implementing these tools helps you enforce proper coding styles, detect errors, and ensure clear commits in your GitHub projects.
 
 - Auto fix for formatting with ESlint
 - Mulit eslint config presets: JavaScript,TypeScript, Vue and React
 - Format other files : json, yaml,markdown
-- Consistent css,scss,less style by Stylelint
+- Consistent CSS,SCSS,Less style by Stylelint
 - Standardized commit information by Commitlint
 
-## Usage
+## Usage 
 
 ### Install
 ```bash
@@ -29,7 +29,7 @@ pnpm add -D eslint @chansee97/xxx-config
 ```bash
 pnpm i -D eslint
 
-echo "{'extends': '@chansee97/eslint-config-xxx'}" > .eslintrc
+echo '{"extends": "@chansee97/eslint-config-xxx"}' > .eslintrc
 ```
 add script to `package.json`
 ```json
@@ -84,7 +84,7 @@ pnpm i -D lint-staged simple-git-hooks
 npx simple-git-hooks
 ```
 
-### Lint CSS,Less,Scss
+### Lint CSS, SCSS, Less
 ```bash
 pnpm i -D stylelint
 
