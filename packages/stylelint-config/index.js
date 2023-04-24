@@ -2,14 +2,21 @@ const propertyGroups = require('./groups.js')
 
 module.exports = {
   extends: [
-    'stylelint-config-standard-scss',
-    'stylelint-config-recommended-less',
-    'stylelint-config-standard-vue',
     'stylelint-config-html',
+    'stylelint-config-standard',
+    'stylelint-config-standard-scss',
+    'stylelint-config-standard-vue/scss',
+    'stylelint-config-standard-vue',
   ],
-  plugins: ['stylelint-order', 'stylelint-less'],
+  plugins: ['stylelint-order'],
   rules: {
     'order/properties-order': propertyGroups,
+    'selector-pseudo-element-no-unknown': [
+      true,
+      {
+        ignorePseudoElements: ['/^view-transition/'],
+      },
+    ],
   },
   ignoreFiles: [
     'node_modules',

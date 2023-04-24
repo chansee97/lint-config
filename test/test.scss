@@ -1,0 +1,45 @@
+$primary-color: #007bff;
+
+// 定义一个混合宏，在多个选择器中共享相同CSS属性
+@mixin card-shadow {
+  box-shadow: 0 2px 4px rgb(0 0 0 / 10%);
+}
+
+// 定义一个媒体查询和响应
+@media (width >= 768px) {
+  .card {
+    width: 400px;
+  }
+}
+
+.card__info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card__title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: $primary-color;
+}
+
+.card__description {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  line-height: 1.2;
+}
+
+.card__button {
+  padding: 0.5rem 1rem;
+  color: white;
+  cursor: pointer;
+  background-color: $primary-color;
+  border: none;
+  border-radius: 0.25rem;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background-color: lighten($primary-color, 10%);
+  }
+}

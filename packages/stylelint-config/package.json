@@ -18,7 +18,7 @@
     "*.js"
   ],
   "scripts": {
-    "stylelint": "npx stylelint *.{css,scss,vue,less,html} --fix"
+    "stylelint": "npx stylelint **/*.{css,scss,vue,less,html} --fix"
   },
   "peerDependencies": {
     "stylelint": "*"
@@ -26,13 +26,12 @@
   "dependencies": {
     "postcss-html": "^1.5.0",
     "stylelint-config-html": "^1.1.0",
-    "stylelint-config-recommended-less": "^1.0.4",
+    "stylelint-config-standard": "^33.0.0",
     "stylelint-config-standard-scss": "^8.0.0",
     "stylelint-config-standard-vue": "^1.0.0",
-    "stylelint-less": "^1.0.6",
     "stylelint-order": "^6.0.3"
   },
   "devDependencies": {
-    "stylelint": "^15.4.0"
+    "stylelint": "^15.6.0"
   }
 }

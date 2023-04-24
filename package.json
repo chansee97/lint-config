@@ -11,18 +11,21 @@
   "license": "MIT",
   "scripts": {
     "lint": "eslint . --fix",
+    "stylelint": "npx stylelint **/*.{css,scss,vue,less,html} --fix",
     "update-version": "bumpp -r",
     "publish": "pnpm -r publish --access public",
     "release": "pnpm update-version && pnpm publish"
   },
   "devDependencies": {
-    "@chansee97/commitlint-config": "workspace:*",
-    "@chansee97/eslint-config-vue": "workspace:*",
+    "@chansee97/commitlint-config": "link:./packages/commitlint-config",
+    "@chansee97/eslint-config-vue": "link:./packages/eslint-config-vue",
+    "@chansee97/stylelint-config": "link:./packages/stylelint-config",
     "@commitlint/cli": "^17.6.1",
     "bumpp": "^9.1.0",
     "eslint": "^8.38.0",
     "lint-staged": "^13.2.1",
     "simple-git-hooks": "^2.8.1",
+    "stylelint": "^15.6.0",
     "typescript": "^5.0.4"
   },
   "simple-git-hooks": {
@@ -30,6 +33,15 @@
     "pre-commit": "pnpm lint-staged && git add ."
   },
   "lint-staged": {
-    "*.{js,ts,json}": "eslint . --fix"
+    "*.{js,jsx,,mjs,ts,tsx,json,,md,yml}": [
+      "eslint --fix"
+    ],
+    "*.{css,scss,less,html}": [
+      "stylelint --fix"
+    ],
+    "*.vue": [
+      "eslint --fix",
+      "stylelint --fix"
+    ]
   }
 }

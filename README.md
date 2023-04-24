@@ -7,7 +7,7 @@ This is a repository that focuses on integrating ESLint, Stylelint, and Commitli
 - Auto fix for formatting with ESlint
 - Mulit eslint config presets: JavaScript,TypeScript, Vue and React
 - Format other files : json, yaml,markdown
-- Consistent CSS,SCSS,Less style by Stylelint
+- Check for syntax errors in SCSS and CSS with Stylelint
 - Standardized commit information by Commitlint
 
 ## Usage 
@@ -62,7 +62,7 @@ If you want to apply lint and auto-fix before every commit, you can add the foll
     "pre-commit": "pnpm lint-staged"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
+    "*.{js,jsx,,mjs,ts,tsx,json,,md,yml}": [
       "eslint --fix"
     ],
     "*.{css,scss,less,html}": [
@@ -84,7 +84,7 @@ pnpm i -D lint-staged simple-git-hooks
 npx simple-git-hooks
 ```
 
-### Lint CSS, SCSS, Less
+### Lint CSS, SCSS
 ```bash
 pnpm i -D stylelint
 
@@ -94,8 +94,19 @@ add script to `package.json`
 ```json
 {
   "scripts": {
-    "stylelint:fix": "npx stylelint *.{css,scss,vue,less,html} --fix"
+    "stylelint:fix": "npx stylelint **/*.{css,scss,vue,less,html} --fix"
   }
+}
+```
+
+Visual Studio Code
+
+```json
+{
+  "stylelint.validate": [
+    // ↓ Add "vue" language.
+    "vue"
+  ]
 }
 ```
 

@@ -28,12 +28,14 @@ export default {
 .container {
   text-align: center;
 }
+
 h1 {
   font-size: 4rem;
 }
+
 button {
+  padding: 1rem;
   margin-top: 2rem;
   font-size: 2rem;
-  padding: 1rem;
 }
 </style>

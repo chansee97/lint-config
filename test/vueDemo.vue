@@ -27,7 +27,7 @@ export default {
   </div>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
   .container {
     text-align: center;
   }
@@ -38,8 +38,8 @@ export default {
   }
 
   button {
+    padding: 1rem;
     margin-top: 2rem;
     font-size: 2rem;
-    padding: 1rem;
   }
 </style>

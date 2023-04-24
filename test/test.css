@@ -1,0 +1,124 @@
+:root{
+  --primary:'#845EC2'
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar:horizontal {
+  height: 6px;
+}
+
+::-webkit-scrollbar-track,
+::-webkit-scrollbar-corner {
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(180 197 180);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+      background: rgb(128 172 128);
+}
+
+::view-transition-old(root),
+::view-transition-new(root) {
+    mix-blend-mode: normal;
+  animation: none;
+}
+
+/* 进入dark模式和退出dark模式时，两个图像的位置顺序正好相反 */
+.dark::view-transition-old(root) {
+  z-index: 1;
+}
+
+.dark::view-transition-new(root) {
+  z-index: 999;
+}
+
+::view-transition-old(root) {
+      z-index: 999;
+}
+
+::view-transition-new(root) {
+  z-index: 1;
+}
+
+/* CSS Reset */
+*,
+::before,
+::after {
+  box-sizing: border-box;
+        padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+      font-size: 16px;
+  line-height: 1.5;
+    color: #333;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 50px;
+  padding: 0 20px;
+  color: #fff;
+  background-color: #007bff;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.nav {
+  display: flex;
+  list-style: none;
+}
+
+.nav li {
+  margin-right: 10px;
+}
+
+.nav a {
+  color: #fff;
+  text-decoration: none;
+  transition: color .3s ease-in-out;
+}
+
+.nav a:hover {
+  color: #ccc;
+}
+
+.main {
+  max-width: 800px;
+  padding: 0 20px;
+  margin: 50px auto;
+  text-align: justify;
+}
+
+.main h1 {
+  margin-bottom: 20px;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+.main p {
+  margin-bottom: 15px;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  color: #666;
+  background-color: #f5f5f5;
+}
