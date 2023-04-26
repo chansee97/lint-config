@@ -226,6 +226,7 @@ module.exports = {
     ],
     'object-curly-spacing': ['error', 'always'],
     'no-return-await': 'off',
+    'no-useless-concat': 'off',
     'space-before-function-paren': [
       'error',
       {
