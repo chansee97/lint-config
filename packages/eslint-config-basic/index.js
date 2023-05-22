@@ -387,6 +387,6 @@ module.exports = {
     '!.vscode',
 
     // force exclude
-    '.vitepress/cache',
+    '**/.vitepress/cache',
   ],
 }
