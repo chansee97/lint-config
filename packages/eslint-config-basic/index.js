@@ -383,10 +383,9 @@ module.exports = {
     'Dockerfile',
     // force include
     '!.github',
-    '!.vitepress',
     '!.vscode',
 
     // force exclude
-    '.vitepress/cache',
+    '**/.vitepress/cache',
   ],
 }
