@@ -24,6 +24,7 @@ jobs:
         run: pnpm install
 
       - name: Publish package
-        run: pnpm publish # 发布包到 NPM
+        run: pnpm publish --no-git-checks # 发布包到 NPM
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPMPUBLISH_BRANCH: "main" # 这里设置正确的发布分支名称
