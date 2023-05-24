@@ -1,0 +1,24 @@
+name: Publish Package to npmjs
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - 'v*'
+    
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      # Setup .npmrc file to publish to npm
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '16.x'
+          registry-url: 'https://registry.npmjs.org'
+      - name: Install dependencies
+        run: pnpm install # 如果您使用 pnpm 作为包管理器
+      - name: Publish package
+        run: pnpm publish # 发布包到 NPM
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
