@@ -139,6 +139,26 @@ extend your config in `.eslintrc`, `.stylelintrc`, `.commitlintrc`...
   }
 }
 ```
+
+config alias
+
+```js
+ settings: {
+'import/resolver': {
+    node: { extensions: ['.js', '.mjs'] },
+    // default alias
+    alias: {
+      map: [
+        ['~', '.'],
+        ['@', './src'],
+      ],
+      extensions: ['.js', '.jsx', '.mjs', '.cjs', '.ts', '.tsx', '.mts', '.cts'],
+    },
+  },
+},
+```
+
+
 ## Thanks
 This repository is modified from [@antfu/eslint-config](https://github.com/antfu/eslint-config)
 
