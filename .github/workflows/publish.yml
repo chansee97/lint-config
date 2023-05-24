@@ -5,7 +5,7 @@ on:
   push:
     tags:
       - 'v*'
-    
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -16,8 +16,13 @@ jobs:
         with:
           node-version: '16.x'
           registry-url: 'https://registry.npmjs.org'
+
+      - name: Install pnpm
+        run: npm install pnpm -g # 如果您使用 pnpm 作为包管理器
+
       - name: Install dependencies
-        run: pnpm install # 如果您使用 pnpm 作为包管理器
+        run: pnpm install
+
       - name: Publish package
         run: pnpm publish # 发布包到 NPM
         env:
