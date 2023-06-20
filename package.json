@@ -24,12 +24,12 @@
     "@chansee97/commitlint-config": "link:./packages/commitlint-config",
     "@chansee97/eslint-config-vue": "link:./packages/eslint-config-vue",
     "@chansee97/stylelint-config": "link:./packages/stylelint-config",
-    "@commitlint/cli": "^17.6.1",
+    "@commitlint/cli": "^17.6.5",
     "bumpp": "^9.1.0",
-    "eslint": "^8.38.0",
+    "eslint": "^8.43.0",
     "lint-staged": "^13.2.1",
     "simple-git-hooks": "^2.8.1",
-    "stylelint": "^15.6.0",
+    "stylelint": "^15.8.0",
     "typescript": "^5.0.4"
   },
   "simple-git-hooks": {

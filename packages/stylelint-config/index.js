@@ -11,12 +11,6 @@ module.exports = {
   plugins: ['stylelint-order'],
   rules: {
     'order/properties-order': propertyGroups,
-    'selector-pseudo-element-no-unknown': [
-      true,
-      {
-        ignorePseudoElements: ['/^view-transition/'],
-      },
-    ],
   },
   ignoreFiles: [
     'node_modules',

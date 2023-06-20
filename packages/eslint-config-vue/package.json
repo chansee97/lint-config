@@ -22,10 +22,10 @@
   "dependencies": {
     "@chansee97/eslint-config-basic": "workspace:*",
     "@chansee97/eslint-config-ts": "workspace:*",
-    "eslint-plugin-vue": "^9.13.0",
+    "eslint-plugin-vue": "^9.15.0",
     "local-pkg": "^0.4.3"
   },
   "devDependencies": {
-    "eslint": "^8.39.0"
+    "eslint": "^8.43.0"
   }
 }
