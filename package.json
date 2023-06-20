@@ -9,11 +9,15 @@
     "url": "https://github.com/chansee97"
   },
   "license": "MIT",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/",
+    "access": "public"
+  },
   "scripts": {
     "lint": "eslint . --fix",
     "stylelint": "npx stylelint **/*.{css,scss,vue,less,html} --fix",
     "update-version": "bumpp -r",
-    "publish": "pnpm -r publish --access public",
+    "publish": "pnpm -r publish",
     "release": "pnpm update-version && pnpm publish"
   },
   "devDependencies": {
